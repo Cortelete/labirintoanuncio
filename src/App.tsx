@@ -154,11 +154,11 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="relative w-full flex justify-center"
         >
-          <div className="aspect-video bg-cosmic-card rounded-2xl border border-alien-green/30 shadow-[0_0_30px_rgba(57,255,20,0.15)] relative overflow-hidden">
+          <div className="w-full max-h-[80vh] bg-cosmic-card rounded-2xl border border-alien-green/30 shadow-[0_0_30px_rgba(57,255,20,0.15)] relative overflow-hidden flex justify-center">
             <video 
-              className="w-full h-full object-cover outline-none"
+              className="w-full h-auto max-h-[80vh] object-contain outline-none bg-black/40"
               controls
               poster="/video-thumb.jpg"
             >
@@ -253,11 +253,11 @@ const About = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative h-64 md:h-96 bg-cosmic-card rounded-2xl border border-gray-800 overflow-hidden flex items-center justify-center group"
+            className="relative w-full bg-cosmic-card rounded-2xl border border-gray-800 overflow-hidden flex items-center justify-center group"
           >
-            <img src="/hosts.jpg" alt="Cortelete e Joy" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-cosmic-bg via-transparent to-transparent"></div>
-            <div className="absolute bottom-6 left-6 right-6 text-center">
+            <img src="/hosts.jpg" alt="Cortelete e Joy" className="w-full h-auto max-h-[600px] object-contain opacity-80 group-hover:scale-105 transition-transform duration-700 bg-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-cosmic-bg via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-6 left-6 right-6 text-center pointer-events-none">
               <p className="text-white font-bold text-xl drop-shadow-lg">Cortelete & Joy</p>
             </div>
           </motion.div>
@@ -281,8 +281,8 @@ const Lore = () => {
               viewport={{ once: true }}
               className="order-2 lg:order-1 flex justify-center"
             >
-              <div className="relative w-full max-w-md aspect-square">
-                <img src="/jack-planet.jpg" alt="Jack Planet" className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(57,255,20,0.3)]" />
+              <div className="relative w-full max-w-md flex justify-center">
+                <img src="/jack-planet.jpg" alt="Jack Planet" className="w-full h-auto max-h-[500px] object-contain drop-shadow-[0_0_30px_rgba(57,255,20,0.3)]" />
               </div>
             </motion.div>
 
