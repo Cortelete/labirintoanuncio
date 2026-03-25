@@ -109,10 +109,10 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-cosmic-bg/90 backdrop-blur-md border-b border-alien-green/20 py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Radio className="text-alien-green w-8 h-8" />
-          <span className="font-bold text-xl tracking-wider text-white">LABIRINTO<span className="text-alien-green">ACÚSTICO</span></span>
+          <Radio className="text-alien-green w-6 h-6 md:w-8 md:h-8" />
+          <span className="font-bold text-lg md:text-xl tracking-wider text-white">LABIRINTO<span className="text-alien-green">ACÚSTICO</span></span>
         </div>
-        <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-6 py-2 rounded-full font-bold hover:bg-pizza-orange hover:text-white transition-colors duration-300 shadow-[0_0_15px_var(--color-alien-green-glow)]">
+        <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-4 py-2 md:px-6 md:py-2 text-sm md:text-base rounded-full font-bold hover:bg-pizza-orange hover:text-white transition-colors duration-300 shadow-[0_0_15px_var(--color-alien-green-glow)]">
           Anuncie Conosco
         </button>
       </div>
@@ -133,18 +133,18 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
           <div className="inline-block border border-alien-green/50 bg-alien-green/10 text-alien-green px-4 py-1 rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">
             Rádio Clube Pontagrossense & Redes Sociais
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
             Sua marca no <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-alien-green to-pizza-orange">Centro do Universo</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
             Conecte sua empresa a uma audiência engajada. Mais de 80 mil ouvintes mensais e 1 milhão de curtidas no TikTok. O espaço perfeito para você decolar.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-8 py-4 rounded-full font-bold text-lg hover:bg-pizza-orange hover:text-white transition-all duration-300 shadow-[0_0_20px_var(--color-alien-green-glow)] flex items-center gap-2">
+            <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-pizza-orange hover:text-white transition-all duration-300 shadow-[0_0_20px_var(--color-alien-green-glow)] flex items-center gap-2">
               <Rocket className="w-5 h-5" /> Quero Decolar
             </button>
-            <a href="#sobre" className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors duration-300 flex items-center gap-2">
+            <a href="#sobre" className="border border-gray-600 text-gray-300 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-800 transition-colors duration-300 flex items-center gap-2">
               Saber Mais <ChevronDown className="w-5 h-5" />
             </a>
           </div>
@@ -198,7 +198,7 @@ const Stats = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-alien-green/10 text-alien-green mb-6">
                 {stat.icon}
               </div>
-              <h3 className="text-4xl font-black text-white mb-2">{stat.value}</h3>
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</h3>
               <p className="text-gray-400 font-medium uppercase tracking-wider text-sm">{stat.label}</p>
             </motion.div>
           ))}
@@ -253,7 +253,7 @@ const About = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative h-96 bg-cosmic-card rounded-2xl border border-gray-800 overflow-hidden flex items-center justify-center group"
+            className="relative h-64 md:h-96 bg-cosmic-card rounded-2xl border border-gray-800 overflow-hidden flex items-center justify-center group"
           >
             <img src="/hosts.jpg" alt="Cortelete e Joy" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-cosmic-bg via-transparent to-transparent"></div>
@@ -399,15 +399,15 @@ const Footer = ({ onOpenModal }: { onOpenModal: () => void }) => {
               Entre em contato com nossa equipe comercial e descubra o plano perfeito para o tamanho da sua empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-8 py-4 rounded-full font-bold text-lg hover:bg-pizza-orange hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-center">
+              <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-pizza-orange hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-center">
                 <MessageCircle className="w-5 h-5" /> Chamar no WhatsApp
               </button>
-              <a href="mailto:labirintoacustico@gmail.com" className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center gap-2 text-center">
+              <a href="mailto:labirintoacustico@gmail.com" className="border border-gray-600 text-gray-300 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center gap-2 text-center">
                 <Mail className="w-5 h-5" /> Enviar E-mail
               </a>
             </div>
             
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 md:gap-4">
               <a href="https://www.tiktok.com/@labirintoacustico" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-alien-green hover:text-cosmic-bg transition-colors">
                 <TikTokIcon className="w-5 h-5" />
               </a>
@@ -436,19 +436,19 @@ const Footer = ({ onOpenModal }: { onOpenModal: () => void }) => {
                 <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-alien-green"><Phone className="w-5 h-5" /></div>
                 <span>(41) 98871-0303</span>
               </li>
-              <li className="flex items-center gap-4 text-gray-300">
-                <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-alien-green"><Mail className="w-5 h-5" /></div>
+              <li className="flex items-center gap-4 text-gray-300 break-all sm:break-normal">
+                <div className="w-10 h-10 shrink-0 bg-gray-800 rounded-full flex items-center justify-center text-alien-green"><Mail className="w-5 h-5" /></div>
                 <span>labirintoacustico@gmail.com</span>
               </li>
               <li className="flex items-center gap-4 text-gray-300">
-                <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-alien-green"><Radio className="w-5 h-5" /></div>
+                <div className="w-10 h-10 shrink-0 bg-gray-800 rounded-full flex items-center justify-center text-alien-green"><Radio className="w-5 h-5" /></div>
                 <span>Rádio Clube Pontagrossense - Ponta Grossa, PR</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
           <div className="flex items-center gap-2">
             <Radio className="text-alien-green w-6 h-6" />
             <span className="font-bold tracking-wider text-white">LABIRINTO<span className="text-alien-green">ACÚSTICO</span></span>
