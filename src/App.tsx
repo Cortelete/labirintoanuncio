@@ -20,7 +20,9 @@ import {
   Twitch,
   ExternalLink,
   Share2,
-  Lock
+  Lock,
+  Mic,
+  Clock
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
@@ -140,7 +142,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-alien-green to-pizza-orange">Centro do Universo</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
-            Conecte sua empresa a uma audiência engajada. Mais de 80 mil ouvintes mensais e 1 milhão de curtidas no TikTok. O espaço perfeito para você decolar.
+            Conecte sua empresa a uma audiência engajada. Mais de 150 mil ouvintes nos últimos 3 meses e 3 milhões de curtidas no TikTok. O espaço perfeito para você decolar.
           </p>
           <div className="flex flex-wrap gap-4">
             <button onClick={onOpenModal} className="bg-alien-green text-cosmic-bg px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-pizza-orange hover:text-white transition-all duration-300 shadow-[0_0_20px_var(--color-alien-green-glow)] flex items-center gap-2">
@@ -179,15 +181,16 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
 
 const Stats = () => {
   const stats = [
-    { icon: <Headphones />, value: "80k+", label: "Ouvintes Mensais" },
-    { icon: <TrendingUp />, value: "1M+", label: "Curtidas no TikTok" },
-    { icon: <Radio />, value: "4 Dias", label: "Ao Vivo por Semana" },
+    { icon: <Headphones />, value: "150k+", label: "Ouvintes nos Últimos 3 Meses" },
+    { icon: <TrendingUp />, value: "3M+", label: "Curtidas no TikTok" },
+    { icon: <Radio />, value: "4 Dias", label: "Ao vivo na Rádio e Redes" },
+    { icon: <Mic />, value: "100+", label: "Programas e 100h+ de Conteúdo" },
   ];
 
   return (
     <section className="py-20 relative z-10">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}
@@ -332,7 +335,7 @@ const RadioInfo = () => {
           <p className="text-xl text-gray-300 leading-relaxed">
             Uma das emissoras mais tradicionais e respeitadas de Ponta Grossa e região. Estar na Rádio Clube significa credibilidade instantânea para a sua marca, unindo a força do rádio FM com o nosso alcance explosivo nas redes sociais.
           </p>
-          <p className="mt-4 text-alien-green font-bold text-lg">De Segunda a Quinta-feira, das 22h às 23h.</p>
+          <p className="mt-4 text-alien-green font-bold text-lg">Ao vivo das 22h às 23h, 4 dias na semana na Rádio Clube e em todas as redes sociais.</p>
         </motion.div>
       </div>
     </section>
