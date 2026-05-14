@@ -179,6 +179,44 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
   );
 };
 
+const PartnerLogo = ({ index, ...props }: { index: number; key?: string | number }) => {
+  const [error, setError] = useState(false);
+  
+  if (error) return null;
+  
+  return (
+    <img 
+      {...props}
+      src={`/${index}.png`} 
+      alt={`Parceiro ${index}`} 
+      onError={() => setError(true)}
+      className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover shrink-0 border-2 border-gray-800 bg-cosmic-bg/50 shadow-lg mx-4"
+    />
+  );
+};
+
+const Partners = () => {
+  // Gera uma lista de 1 a 10 (ou mais, dependendo de quantos teremos)
+  const partnerIndexes = Array.from({ length: 10 }, (_, i) => i + 1);
+  
+  return (
+    <section className="py-12 border-y border-gray-800 bg-cosmic-card/30 overflow-hidden relative z-10">
+       <div className="container mx-auto px-6 text-center mb-8">
+          <p className="text-gray-400 font-bold tracking-widest uppercase text-sm">Marcas e parceiros que já passaram pelo programa</p>
+       </div>
+       
+       <div className="flex w-full overflow-hidden">
+         {/* Duplica a lista para dar o efeito de scroll infinito */}
+         <div className="flex items-center w-max animate-marquee">
+           {[...partnerIndexes, ...partnerIndexes].map((index, i) => (
+             <PartnerLogo key={`${index}-${i}`} index={index} />
+           ))}
+         </div>
+       </div>
+    </section>
+  );
+};
+
 const Stats = () => {
   const stats = [
     { icon: <Headphones />, value: "150k+", label: "Ouvintes nos Últimos 3 Meses" },
@@ -581,6 +619,7 @@ export default function App() {
       <Navbar onOpenModal={() => setIsModalOpen(true)} />
       <main>
         <Hero onOpenModal={() => setIsModalOpen(true)} />
+        <Partners />
         <Stats />
         <About />
         <Lore />
